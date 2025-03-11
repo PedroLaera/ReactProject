@@ -1,12 +1,19 @@
-import "./App.css";
-import Form from "./components/form/index.tsx";
-import Lista from "./components/list/index.tsx";
+import { BrowserRouter, Routes, Route } from "react-router";
+
+import Home from "./pages/Home";
+import Pokedex from "./pages/Pokedex";
+import Login from "./pages/Login";
 
 function App() {
   return (
-    <div className="App">
-      <Form />
-      <Lista />
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Login/:id" element={<Login />} />
+          <Route path="/Pokedex" element={<Pokedex />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

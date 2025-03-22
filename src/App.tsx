@@ -1,20 +1,17 @@
-import { BrowserRouter, Routes, Route } from "react-router";
-
+import { BrowserRouter, Route, Routes } from "react-router";
+import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Pokedex from "./pages/Pokedex";
-import Login from "./pages/Login";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Login/:id" element={<Login />} />
-          <Route path="/Pokedex" element={<Pokedex />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home/:id" element={<Home />} />
+        <Route path="/pokedex" element={<Pokedex />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
